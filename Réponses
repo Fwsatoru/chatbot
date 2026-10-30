@@ -44,5 +44,8 @@ les mots clés fonctionnent
 la saisie avce maj ou sans fonctionne 
 le message inconnu affiche un message d'erreur
 la remise à zéro ainsi que le compteur fonctionnent
+la commande au clavier et la fenêtre étroite fonctionnent 
 
 Ce qui reste à terminer :
+test sur la console
+relecture et nettoyage du js 
