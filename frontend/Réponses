@@ -16,19 +16,19 @@ Votre réponse :
 
 Quelle variable est réaffectée ? Pourquoi les références aux éléments peuvent-elles être déclarées avec const ? Quelles propriétés de votre objet chatbot utilisez-vous ?
 
-Votre réponse : 
+Votre réponse : la variable des nombres de messages car elle est incrémentée a chaque messages envoyées ainsi que la variable des messages qui dépends entierement des messages prompté par l'utilisateur.
 
 ## 03 Les fonctions
 
 Quel est le paramètre de choisirReponse ? Que renvoie cette fonction ? Pourquoi est-il utile de séparer le choix de la réponse de l’affichage ?
 
-Votre réponse :
+Votre réponse : la fonction choisir réponse prends pour paramètre text et renvoies la réponse openai du chatbot 
 
 ## 04 Une difficulté rencontrée
 
 Décrivez l’observation, votre hypothèse, votre vérification et la correction effectuée.
 
-Votre réponse :
+Votre réponse : la principal difficultée rencontrée est le fait de brancher notre chatbob à l'API OPENAI et connecter le frontend avec le backend on a noté une certaine difficulté avec la compréhension du JS pour cette tache nous avons eu pas mal de difficulté à retrouver le lien entre frontend et backend par rapport à ça 
 
 ## 05 Vos vérifications
 
@@ -46,6 +46,6 @@ le message inconnu affiche un message d'erreur
 la remise à zéro ainsi que le compteur fonctionnent
 la commande au clavier et la fenêtre étroite fonctionnent 
 
-Ce qui reste à terminer :
+Ce qui reste à terminer : 
 test sur la console
 relecture et nettoyage du js 

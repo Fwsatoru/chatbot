@@ -68,7 +68,7 @@ async function demanderAuServeur(texte) {
   return chatbot.reponseDefaut;
 }
 
-// Relie la lecture, la validation, la réponse, le compteur et l'affichage.
+
 async function envoyerMessage() {
   const texteOriginal = champSaisie.value;
   const texteCompare = texteOriginal.trim().toLowerCase();
@@ -93,13 +93,13 @@ async function envoyerMessage() {
     return;
   }
 
-  // Message libre : on affiche une bulle d'attente, remplacée par la réponse du serveur.
+ 
   const bulle = ajouterMessage("…", "bot-message");
   bulle.textContent = await demanderAuServeur(texteOriginal.trim());
   zoneMessages.scrollTop = zoneMessages.scrollHeight;
 }
 
-// Rétablit l'état du chargement de la page.
+
 function recommencer() {
   nombreMessages = 0;
   zoneMessages.textContent = "";
