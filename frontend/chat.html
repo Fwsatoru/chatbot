@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <link href="Untitled-2.css" rel="stylesheet">
+  <script src="chat.js" defer></script>
+</head>
+
+<body>
+  <h1>Chatbot</h1>
+  <p class="consigne">Écris un mot-clé ou clique sur une suggestion pour découvrir les bases du Web.</p>
+
+  <div class="chatbot">
+    <header>
+      <h2>Hylia-gpt</h2>
+      <p class="mots-cles">Mots-clés reconnus : bonjour, aide, html, css, javascript</p>
+    </header>
+
+    <main class="chat-messages" id="chat-messages" aria-live="polite"></main>
+
+    <div class="suggestions">
+      <button type="button" data-message="bonjour">Bonjour</button>
+      <button type="button" data-message="aide">Aide</button>
+      <button type="button" data-message="html">html</button>
+      <button type="button" data-message="css">css</button>
+      <button type="button" data-message="javascript">javascript</button>
+    </div>
+
+    <form class="chat-form" id="chat-form">
+      <label for="chat-input">Ton message</label>
+      <input type="text" id="chat-input" placeholder="Écris ton message..." autocomplete="off">
+      <button type="submit">Envoyer</button>
+      <button type="button" id="btn-recommencer">Recommencer</button>
+    </form>
+
+    <p class="retour" id="retour" aria-live="polite"></p>
+    <p class="compteur" id="compteur">Messages envoyés : 0</p>
+  </div>
+</body>
+
+</html>

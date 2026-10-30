@@ -1,0 +1,241 @@
+
+:root {
+    --fond: #f2f5f4;              /* fond de la page, gris-vert très clair */
+    --principal: #176b54;         /* vert sapin : bouton, titres */
+    --principal-fonce: #0f5340;   /* vert foncé, pour le survol du bouton */
+    --accent: #916d67;            /* corail : petites touches */
+    --texte: #223b35;             /* texte principal */
+    --texte-secondaire: #6b7f7a;  /* texte discret */
+    --blanc: #ffffff;
+    --lisere: #dde5e2;            /* fins contours gris-vert */
+    --ombre: rgba(34, 59, 53, 0.12);
+}
+
+/* 2. La page entière */
+body {
+    background-color: var(--fond);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texte);
+    margin: 0;
+    padding: 40px 16px;
+}
+
+/* 3. Le grand titre */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: var(--principal);
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+/* 4. La grande boîte du chat */
+.chatbot {
+    background-color: var(--blanc);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--lisere);
+    border-top: 4px solid var(--accent);   /* la touche corail en haut */
+    box-shadow: 0 12px 32px var(--ombre);
+}
+
+/* 5. Le sous-titre « Hylia-GPT » */
+h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--texte-secondaire);
+    margin: 0 0 20px 0;
+}
+
+/* 6. La zone qui affiche les messages */
+.chat-messages {
+    background-color: #f8faf9;
+    height: 400px;
+    overflow-y: auto;                 /* barre de défilement quand ça déborde */
+    border: 1px solid var(--lisere);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 7. Une bulle de message */
+.message {
+    background-color: var(--blanc);
+    padding: 10px 14px;
+    border-radius: 12px;
+    max-width: 80%;
+    box-shadow: 0 2px 6px var(--ombre);
+    overflow-wrap: anywhere;          /* les mots longs ne débordent pas */
+    animation: apparition 0.25s ease-out;
+}
+
+/* Les messages du robot : barre corail à gauche */
+.bot-message {
+    border-left: 3px solid var(--accent);
+    align-self: flex-start;           /* collés à gauche */
+}
+
+/* Tes messages : collés à droite, fond vert clair */
+.user-message {
+    align-self: flex-end;             /* collés à droite */
+    background-color: #e2f1ec;
+    border-right: 3px solid var(--principal);
+}
+
+/* 8. Les boutons de suggestions */
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;                  /* passe à la ligne si pas de place */
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.suggestions button {
+    background-color: var(--blanc);
+    color: var(--principal);
+    border: 1px solid var(--accent);
+    border-radius: 20px;              /* forme de « pilule » */
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.suggestions button:hover {
+    background-color: #fdeae6;        /* corail très pâle */
+    transform: translateY(-2px);
+}
+
+/* 9. La ligne du bas : la case et le bouton côte à côte */
+.chat-form {
+    display: flex;
+    gap: 10px;
+}
+
+#chat-input {
+    flex: 1;                          /* prend toute la place restante */
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--principal);
+    font-size: 15px;
+    color: var(--texte);
+}
+
+/* Le texte d'exemple gris dans la case vide */
+#chat-input::placeholder {
+    color: var(--texte-secondaire);
+}
+
+/* Quand tu cliques dans la case, un halo vert */
+#chat-input:focus-visible {
+    outline: 2px solid var(--principal);
+    outline-offset: 2px;
+}
+
+/* 10. Le bouton « Envoyer » */
+.chat-form button {
+    background-color: var(--principal);
+    color: var(--blanc);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Quand la souris passe dessus : il fonce et se soulève */
+.chat-form button:hover {
+    background-color: var(--principal-fonce);
+    transform: translateY(-2px);
+}
+
+/* Quand tu cliques : il redescend */
+.chat-form button:active {
+    transform: translateY(0);
+}
+
+/* Le label du champ, le bouton Recommencer, le compteur et l'indication d'erreur */
+.chat-form {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.chat-form label {
+    width: 100%;
+    font-weight: bold;
+    color: var(--principal);
+}
+
+#btn-recommencer {
+    background-color: var(--blanc);
+    color: var(--principal);
+    border: 1px solid var(--principal);
+}
+
+#btn-recommencer:hover {
+    background-color: #e2f1ec;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.consigne,
+.mots-cles {
+    text-align: center;
+    color: var(--texte-secondaire);
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+}
+
+.retour {
+    color: #803531;
+    font-weight: bold;
+    min-height: 1.5em;
+    margin: 12px 0 0 0;
+}
+
+.compteur {
+    color: var(--texte-secondaire);
+    margin: 4px 0 0 0;
+}
+
+/* 11. L'animation d'apparition des messages */
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 12. Sur téléphone : tout reste lisible */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .chatbot {
+        padding: 20px 16px;
+    }
+
+    .message {
+        max-width: 92%;
+    }
+
+    .chat-form {
+        flex-direction: column;       /* la case au-dessus du bouton */
+    }
+}
