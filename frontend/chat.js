@@ -62,8 +62,13 @@ async function demanderAuServeur(texte) {
     if (reponse.ok && donnees.reply) {
       return donnees.reply;
     }
+    // Le serveur explique ce qui ne va pas (clé manquante, OpenAI indisponible…).
+    if (donnees.error) {
+      return "Erreur du serveur : " + donnees.error;
+    }
   } catch (erreur) {
     // Page ouverte sans le serveur Flask : pas d'API joignable.
+    return "Le serveur ne répond pas. Lance-le avec : python backend/server.py";
   }
   return chatbot.reponseDefaut;
 }
